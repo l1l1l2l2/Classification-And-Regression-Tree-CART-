@@ -8,12 +8,10 @@ namespace ConsoleTests
     {
         static void Main(string[] args)
         {
-            var root = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            var Data = Frame.ReadCsv(Path.Combine(root, "iris.csv"));
-            var columb = Data.
-            Console.WriteLine("-- Raw Data --");
+            var Data = Frame.ReadCsv(
+                Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "iris.csv"), 
+                hasHeaders:false);         
             Data.Print();
-            Console.WriteLine(Data.ToString());
         }
     }
 }
